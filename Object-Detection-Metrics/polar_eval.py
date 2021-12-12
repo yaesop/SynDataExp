@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import glob, os
 import sys
 
-def plot_polar(data, max_value, step=180, name=""):
+def plot_polar(data, max_value, step=180, name="", model, position):
     data = data.tolist()
     data.append(data[0])
     
@@ -30,8 +30,8 @@ def plot_polar(data, max_value, step=180, name=""):
     ax.bar(theta, data, width=width, bottom=0, alpha=0.4, linewidth=0)
     ax.set_ylim ((0, 32))
     plt.title(name)
-    plt.show()
-    #plt.savefig('standing_polar_'+name+'.png')
+    #plt.show()
+    plt.savefig(model+'_'+position+'_polar_'+name+'.png')
     print(sum(data))
     
 def get_iou(bb1, bb2):
@@ -133,7 +133,7 @@ for i in range(len(imgs)):
 
 print(test)
 print(k)
-plot_polar(test, max_value=32, step=15, name= "( H:" + sys.argv[1] +"  R:" + sys.argv[2]+" )" )
+plot_polar(test, max_value=32, step=15, name= "( H:" + sys.argv[1] +"  R:" + sys.argv[2]+" )" , model =sys.argv[3], position = sys.argv[4] )
 
 
 

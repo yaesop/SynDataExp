@@ -4,8 +4,8 @@
 #    mv $file .
 #done
 cd ~/SynDataExp/Object-Detection-Metrics/
-$position = squatting
-$model = nano
+position="squatting" # standing, squatting, prone
+mdl="xlarge" # nano, small, medium, large, xlarge
 #declare -a arr=("exp" "exp2" "exp3" "exp4" "exp5" "exp6" "exp7" "exp8")
 for time in 0 1 2 3; do
 rm -rf output.txt
@@ -21,7 +21,7 @@ for  altitude in 5 10 15 20 25 30 35 40 45 50; do
 
 for dirName in exp exp2 exp3 exp4 exp5 exp6 exp7 exp8 ; do
     cd ~/SynDataExp/yolov5/data
-    python synDataLabelConvert.py $dirName $altitude $radius $time $model $position
+    python synDataLabelConvert.py $dirName $altitude $radius $time $mdl $position
     python synDataConvert.py $dirName $altitude $radius
 done
     cd ~/SynDataExp/Object-Detection-Metrics/
@@ -30,6 +30,6 @@ done
     cat tmp/output.txt >> output.txt
 done
 done
-    mv output.txt output_{$model}_{$position}_{$time}.txt
-    python plotting.py $time
+    mv output.txt output_${mdl}_${position}_${time}.txt
+    python plotting.py $time $mdl $position
 done

@@ -7,9 +7,11 @@ import matplotlib.colors as colors
 
 #x, y = np.random.rand(2, 100) * 4
 #hist, xedges, yedges = np.histogram2d(x, y, bins=15, range=[[5, 80], [5, 80]])
-
+name = sys.argv[1]
+model = sys.argv[2]
+position = sys.argv[3]
 result = []
-text_file = open("output.txt", "r")
+text_file = open("output_"+model+"_"+position+"_"+name+".txt", "r")
 lines = text_file.readlines()
 k = 0
 for line in lines:
@@ -60,7 +62,7 @@ colourMap = plt.cm.ScalarMappable(cmap=plt.cm.jet_r)
 colourMap.set_array(zpos)
 colourMap.set_clim(0,100)
 fig.colorbar(colourMap, shrink=0.4)
-name = sys.argv[1]
-plt.savefig('nano_standing_'+name+'.png')
+
+plt.savefig(model+'_'+position+'_'+name+'.png')
 
 #plt.show()

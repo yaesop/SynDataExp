@@ -1,0 +1,120 @@
+5 5
+AP: 97.78% (person)
+10 5
+AP: 77.46% (person)
+15 5
+AP: 68.50% (person)
+20 5
+AP: 58.57% (person)
+25 5
+AP: 49.12% (person)
+30 5
+AP: 40.72% (person)
+35 5
+AP: 32.13% (person)
+40 5
+AP: 30.91% (person)
+45 5
+AP: 28.28% (person)
+50 5
+AP: 27.99% (person)
+5 10
+AP: 99.10% (person)
+10 10
+AP: 82.68% (person)
+15 10
+AP: 76.60% (person)
+20 10
+AP: 62.63% (person)
+25 10
+AP: 53.14% (person)
+30 10
+AP: 44.19% (person)
+35 10
+AP: 33.06% (person)
+40 10
+AP: 31.96% (person)
+45 10
+AP: 29.03% (person)
+50 10
+AP: 28.05% (person)
+5 15
+AP: 88.61% (person)
+10 15
+AP: 75.90% (person)
+15 15
+AP: 69.17% (person)
+20 15
+AP: 62.98% (person)
+25 15
+AP: 55.81% (person)
+30 15
+AP: 40.73% (person)
+35 15
+AP: 31.88% (person)
+40 15
+AP: 31.55% (person)
+45 15
+AP: 30.32% (person)
+50 15
+AP: 28.44% (person)
+5 20
+AP: 75.97% (person)
+10 20
+AP: 61.49% (person)
+15 20
+AP: 58.38% (person)
+20 20
+AP: 55.26% (person)
+25 20
+AP: 45.95% (person)
+30 20
+AP: 36.85% (person)
+35 20
+AP: 34.63% (person)
+40 20
+AP: 29.59% (person)
+45 20
+AP: 27.43% (person)
+50 20
+AP: 27.64% (person)
+5 25
+AP: 50.97% (person)
+10 25
+AP: 43.73% (person)
+15 25
+AP: 43.02% (person)
+20 25
+AP: 41.31% (person)
+25 25
+AP: 37.31% (person)
+30 25
+AP: 31.93% (person)
+35 25
+AP: 29.73% (person)
+40 25
+AP: 27.06% (person)
+45 25
+AP: 24.51% (person)
+50 25
+AP: 25.20% (person)
+5 30
+AP: 24.46% (person)
+10 30
+AP: 28.76% (person)
+15 30
+AP: 33.12% (person)
+20 30
+AP: 33.36% (person)
+25 30
+AP: 29.09% (person)
+30 30
+AP: 31.26% (person)
+35 30
+AP: 29.30% (person)
+40 30
+AP: 25.46% (person)
+45 30
+AP: 25.92% (person)
+50 30
+AP: 24.93% (person)

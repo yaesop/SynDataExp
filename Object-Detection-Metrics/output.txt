@@ -1,0 +1,32 @@
+5 5
+AP: 99.51% (person)
+10 5
+AP: 83.96% (person)
+15 5
+AP: 69.03% (person)
+20 5
+AP: 49.27% (person)
+25 5
+AP: 39.87% (person)
+30 5
+AP: 33.55% (person)
+35 5
+AP: 29.52% (person)
+40 5
+AP: 28.19% (person)
+45 5
+AP: 26.03% (person)
+50 5
+AP: 24.41% (person)
+5 10
+AP: 99.71% (person)
+10 10
+AP: 84.68% (person)
+15 10
+AP: 73.71% (person)
+20 10
+AP: 54.44% (person)
+25 10
+AP: 41.73% (person)
+30 10
+AP: 36.82% (person)
