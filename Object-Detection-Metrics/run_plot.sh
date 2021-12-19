@@ -4,13 +4,15 @@
 #    mv $file .
 #done
 cd ~/SynDataExp/Object-Detection-Metrics/
-position="squatting" # standing, squatting, prone
-mdl="xlarge" # nano, small, medium, large, xlarge
 #declare -a arr=("exp" "exp2" "exp3" "exp4" "exp5" "exp6" "exp7" "exp8")
+
+for position in stand squat prone; do 
+
+for mdl in n s m l x; do  #nano small medium large; do
 for time in 0 1 2 3; do
 rm -rf output.txt
-for  radius in 5 10 15 20 25 30   ; do
-for  altitude in 5 10 15 20 25 30 35 40 45 50; do
+for  radius in 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80; do
+for  altitude in 5 10 15 20 25 30 35 40 45 50 ; do
 
     rm -rf groundtruths/
     mkdir groundtruths
@@ -19,10 +21,10 @@ for  altitude in 5 10 15 20 25 30 35 40 45 50; do
 
 ## now loop through the above array
 
-for dirName in exp exp2 exp3 exp4 exp5 exp6 exp7 exp8 ; do
+for dirName in  exp_desert_juliet exp_desert_kelly exp_desert_lucy exp_desert_mary exp_desert_romeo exp_desert_scott exp_desert_troy exp_desert_victor ; do
     cd ~/SynDataExp/yolov5/data
     python synDataLabelConvert.py $dirName $altitude $radius $time $mdl $position
-    python synDataConvert.py $dirName $altitude $radius
+    python synDataConvert.py $dirName $altitude $radius $time $mdl $position
 done
     cd ~/SynDataExp/Object-Detection-Metrics/
     python pascalvoc.py --threshold 0.5 -detformat xywh -gtformat xywh -np > tmp/output.txt
@@ -30,6 +32,8 @@ done
     cat tmp/output.txt >> output.txt
 done
 done
-    mv output.txt output_${mdl}_${position}_${time}.txt
+    mv output.txt /home/yaesop/syn_result/output_${mdl}_${position}_${time}.txt
     python plotting.py $time $mdl $position
+done
+done
 done

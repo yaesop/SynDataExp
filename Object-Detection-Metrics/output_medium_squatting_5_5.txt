@@ -1,0 +1,46 @@
+5760 5760
+../Object-Detection-Metrics/detections/synthdata_2020-07-30_20-47-30-465_5_5_262_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-07-30_20-47-34-313_5_5_264_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-07-30_20-47-38-161_5_5_266_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-01_00-12-12-147_5_5_332_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-04-606_5_5_0_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-14-835_5_5_4_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-18-985_5_5_6_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-36-218_5_5_14_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-40-268_5_5_16_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-44-198_5_5_18_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-48-119_5_5_20_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-51-987_5_5_22_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-12-55-846_5_5_24_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-14-51-898_5_5_84_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-14-59-837_5_5_88_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-03-722_5_5_90_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-07-605_5_5_92_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-11-620_5_5_94_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-15-523_5_5_96_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-19-429_5_5_98_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-23-355_5_5_100_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-27-307_5_5_102_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-31-407_5_5_104_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-15-35-367_5_5_106_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-23-03-219_5_5_322_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-23-52-769_5_5_348_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-04_08-23-56-482_5_5_350_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-05_21-42-32-804_5_5_94_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-05_21-42-37-278_5_5_96_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-05_21-42-41-889_5_5_98_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-07_09-51-17-081_5_5_278_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-07_09-51-23-299_5_5_280_img.txt
+../Object-Detection-Metrics/detections/synthdata_2020-08-07_09-51-30-474_5_5_282_img.txt
+[31. 32. 31. 31. 32. 32. 32. 31. 31. 31. 31. 31. 31. 32. 32. 32. 32. 32.
+ 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32.
+ 32. 32. 32. 32. 32. 32. 31. 32. 31. 31. 31. 30. 30. 30. 31. 31. 31. 31.
+ 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32.
+ 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32.
+ 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32.
+ 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32.
+ 32. 32. 32. 32. 32. 31. 31. 31. 32. 32. 32. 32. 32. 31. 31. 31. 32. 32.
+ 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 32. 31.
+ 32. 32. 32. 32. 31. 32. 32. 32. 32. 32. 32. 32. 31. 31. 32. 32. 32. 32.]
+5760
+5758.0

@@ -4,43 +4,80 @@ import sys
 # Opening JSON file
 name = sys.argv[1]
 #imgs = glob.glob('../../yolov5/runs/detect/'+expNum+'/labels/*.txt')
-if name =='exp':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_juliet2/*.png'
-elif name =='exp2':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_kelly2/*.png'
-elif name =='exp3':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_lucy2/*.png'
-elif name =='exp4':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_mary2/*.png'
-elif name =='exp5':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_romeo2/*.png'
-elif name =='exp6':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_scott2/*.png'
-elif name =='exp7':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_troy2/*.png'
-elif name =='exp8':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_victor2/*.png'
-#print(datasetName.split('/'))
-imgs = glob.glob(datasetName)
-#print(imgs)
 altitude = sys.argv[2]
 radius = sys.argv[3]
 time = sys.argv[4]
 model = sys.argv[5]
 position = sys.argv[6]
+if position == "stand" :
+    if name =='exp_desert_juliet':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_juliet/trial'+time+'/*.png'
+    elif name =='exp_desert_kelly':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_kelly/trial'+time+'/*.png'
+    elif name =='exp_desert_lucy':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_lucy/trial'+time+'/*.png'
+    elif name =='exp_desert_mary':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_mary/trial'+time+'/*.png'
+    elif name =='exp_desert_romeo':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_romeo/trial'+time+'/*.png'
+    elif name =='exp_desert_scott':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_scott/trial'+time+'/*.png'
+    elif name =='exp_desert_troy':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_troy/trial'+time+'/*.png'
+    elif name =='exp_desert_victor':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_victor/trial'+time+'/*.png'
+elif position == "prone":
+    if name =='exp_desert_juliet':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_juliet_prone/trial'+time+'/*.png'
+    elif name =='exp_desert_kelly':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_kelly_prone/trial'+time+'/*.png'
+    elif name =='exp_desert_lucy':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_lucy_prone/trial'+time+'/*.png'
+    elif name =='exp_desert_mary':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_mary_prone/trial'+time+'/*.png'
+    elif name =='exp_desert_romeo':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_romeo_prone/trial'+time+'/*.png'
+    elif name =='exp_desert_scott':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_scott_prone/trial'+time+'/*.png'
+    elif name =='exp_desert_troy':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_troy_prone/trial'+time+'/*.png'
+    elif name =='exp_desert_victor':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_victor_prone/trial'+time+'/*.png'
+elif position == "squat":
+    if name =='exp_desert_juliet':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_juliet_squat/trial'+time+'/*.png'
+    elif name =='exp_desert_kelly':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_kelly_squat/trial'+time+'/*.png'
+    elif name =='exp_desert_lucy':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_lucy_squat/trial'+time+'/*.png'
+    elif name =='exp_desert_mary':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_mary_squat/trial'+time+'/*.png'
+    elif name =='exp_desert_romeo':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_romeo_squat/trial'+time+'/*.png'
+    elif name =='exp_desert_scott':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_scott_squat/trial'+time+'/*.png'
+    elif name =='exp_desert_troy':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_troy_squat/trial'+time+'/*.png'
+    elif name =='exp_desert_victor':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_victor_squat/trial'+time+'/*.png'
+
+#print(datasetName.split('/'))
+imgs = glob.glob(datasetName)
+#print(imgs)
+
 #xywh -> 1,2,3,4
 img_selected =[]
 imgs.sort()
 for img in imgs:
-    if img.split('/')[5].split('.')[0].split("_")[3]==altitude and img.split('/')[5].split('.')[0].split("_")[4]==radius:
+    if img.split('/')[6].split('.')[0].split("_")[3]==altitude and img.split('/')[5].split('.')[0].split("_")[4]==radius:
         img_selected.append(img)
-print(len(img_selected))
+#print(len(img_selected))
 k = 0
 
 for img in img_selected:
-    fileName = '/media/yaesop/YAESOP\'S/detect_'+model+'_'+position+'/'+name+'/labels/'+ img.split('/')[5].split('.')[0]+".txt"
+    fileName = '/home/yaesop/syn_result/detect_'+model+'_'+position+'/'+name+'/exp/labels/'+ img.split('/')[5].split('.')[0]+".txt"
     #print(fileName) 
-    if k == 0:           
+    if True:           
         if os.path.exists(fileName):
             #print("ex")
             with open(fileName) as f:

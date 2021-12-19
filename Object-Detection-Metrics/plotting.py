@@ -24,7 +24,7 @@ result = np.array(result, dtype=np.int)
 fig=plt.figure(figsize=(6, 6), dpi=180)
 ax1=fig.add_subplot(111, projection='3d')
 
-ylabels = np.array([5, 10, 15, 20, 25, 30])
+ylabels = np.array([5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80])
 
 #xlabels = np.flip(xlabels)
 ypos = np.arange(ylabels.shape[0])
@@ -50,7 +50,7 @@ ax1.set_title("")
 
 #values = np.linspace(0.2, 1.,zpos.ravel().shape[0])
 
-colors_val = cm.jet_r(zpos/max(zpos))
+colors_val = cm.jet_r(zpos/100)
 
 ax1.bar3d(xposM.ravel(), yposM.ravel(), dz*0, dx, dy, dz, color=colors_val)
 ax1.set_xlabel('Height')
@@ -63,6 +63,6 @@ colourMap.set_array(zpos)
 colourMap.set_clim(0,100)
 fig.colorbar(colourMap, shrink=0.4)
 
-plt.savefig(model+'_'+position+'_'+name+'.png')
-
+plt.savefig('/home/yaesop/syn_result/'+model+'_'+position+'_'+name+'.png')
+print(model, " ", position," ", name,":", sum(zpos)/60)
 #plt.show()

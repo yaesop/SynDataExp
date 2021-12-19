@@ -5,23 +5,63 @@ import glob, os
 
 # Opening JSON file
 name = sys.argv[1]
-print(name)
-if name =='exp':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_juliet2/'
-elif name =='exp2':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_kelly2/'
-elif name =='exp3':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_lucy2/'
-elif name =='exp4':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_mary2/'
-elif name =='exp5':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_romeo2/'
-elif name =='exp6':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_scott2/'
-elif name =='exp7':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_troy2/'
-elif name =='exp8':
-    datasetName = '/media/yaesop/YAESOP\'S/synthdata_desert_victor2/'
+altitude = sys.argv[2]
+radius = sys.argv[3]
+time = sys.argv[4]
+model = sys.argv[5]
+position = sys.argv[6]
+
+if position == "stand" :
+    if name =='exp':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_juliet/'
+    elif name =='exp2':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_kelly/'
+    elif name =='exp3':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_lucy/'
+    elif name =='exp4':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_mary/'
+    elif name =='exp5':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_romeo/'
+    elif name =='exp6':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_scott/'
+    elif name =='exp7':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_troy/'
+    elif name =='exp8':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_victor/'
+elif position == "prone":
+    if name =='exp':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_juliet_prone/'
+    elif name =='exp2':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_kelly_prone/'
+    elif name =='exp3':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_lucy_prone/'
+    elif name =='exp4':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_mary_prone/'
+    elif name =='exp5':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_romeo_prone/'
+    elif name =='exp6':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_scott_prone/'
+    elif name =='exp7':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_troy_prone/'
+    elif name =='exp8':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_victor_prone/'
+elif position == "squat":
+    if name =='exp':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_juliet_squat/'
+    elif name =='exp2':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_kelly_squat/'
+    elif name =='exp3':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_lucy_squat/'
+    elif name =='exp4':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_mary_squat/'
+    elif name =='exp5':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_romeo_squat/'
+    elif name =='exp6':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_scott_squat/'
+    elif name =='exp7':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_troy_squat/'
+    elif name =='exp8':
+        datasetName = '/media/yaesop/ARL_FZNV/extended20210222/desert_victor_squat/'
 
 f = open(datasetName + 'synthdata.json')
 
@@ -31,20 +71,19 @@ imgs = glob.glob('../../Object-Detection-Metrics/detections/*.txt')
 # a dictionary
 #print(imgs)
 data = json.load(f)
-altitude = sys.argv[2]
-radius = sys.argv[3]
+
 # Iterating through the json
 # list
 imgs_converted = []
 for im in imgs:
-    imgs_converted.append(im.split('/')[-1].split('.')[0])
+    if im.split('/')[-1].split('.')[0].split('_')[3]==altitude and im.split('/')[-1].split('.')[0].split('_')[4]==radius:
+        imgs_converted.append(im.split('/')[-1].split('.')[0])
 #print(imgs_converted)
 for i in data:
-    #print(i['image'])
     #print(i['image'].split('/')[1].split('_')[4])
-    if i['image'].split('.')[0] in imgs_converted:
+    if i['image'].split('/')[0].split('.')[0] in imgs_converted:
         if i['image'].split('_')[3] == altitude and i['image'].split('_')[4]==radius:
-            #print(i['image'])
+            #print(i)
         
             #print(i['image'].split('/')[1].split('_')[4])
             #file1 = open("/media/yaesop/TOSHIBA EXT/dataset/synthdata_desert_juliet/labels/"+i['image'].split('.')[0]+".txt","x")

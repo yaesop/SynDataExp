@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import glob, os
 import sys
 
-def plot_polar(data, max_value, step=180, name="", model, position):
+def plot_polar(data, max_value, step=180, name="", model="", position=""):
+    print(model," ",position , " ", name,": "  ,sum(data))
     data = data.tolist()
     data.append(data[0])
     
@@ -29,10 +30,11 @@ def plot_polar(data, max_value, step=180, name="", model, position):
     #plt.fill(theta, data, alpha=0.4)
     ax.bar(theta, data, width=width, bottom=0, alpha=0.4, linewidth=0)
     ax.set_ylim ((0, 32))
-    plt.title(name)
+    plt.title( name+'\n'+str(int(sum(data)))+"/"+str(180*32) +" ( "+ str(round((sum(data)/(180*32))*100,2))+"% )" )
     #plt.show()
-    plt.savefig(model+'_'+position+'_polar_'+name+'.png')
-    print(sum(data))
+    plt.savefig('/home/yaesop/syn_result/'+model+'_'+position+'_polar_'+name+'.png')
+
+
     
 def get_iou(bb1, bb2):
     """
@@ -93,7 +95,7 @@ def get_iou(bb1, bb2):
 test = np.zeros(180)
 imgs = glob.glob('../Object-Detection-Metrics/detections/*.txt')
 gt = glob.glob('../Object-Detection-Metrics/groundtruths/*.txt')
-print(len(imgs), len(gt))
+#print(len(imgs), len(gt))
 imgs.sort()
 gt.sort()
 
@@ -128,11 +130,11 @@ for i in range(len(imgs)):
                 #print(angle)
                 test[angle] = test[angle]+1
                 flag= False
-            else:
-                print(imgs[i])
+            #else:
+                #print(imgs[i])
 
-print(test)
-print(k)
+#print(test)
+#print(k)
 plot_polar(test, max_value=32, step=15, name= "( H:" + sys.argv[1] +"  R:" + sys.argv[2]+" )" , model =sys.argv[3], position = sys.argv[4] )
 
 
