@@ -8,6 +8,7 @@ radius = sys.argv[3]
 time = sys.argv[4]
 model = sys.argv[5]
 position = sys.argv[6]
+#print(position)
 #imgs = glob.glob('../../yolov5/runs/detect/'+expNum+'/labels/*.txt')
 if position == "stand" :
     if name =='exp_desert_juliet':
@@ -63,51 +64,51 @@ elif position == "squat":
 
 #print(datasetName.split('/'))
 imgs = glob.glob(datasetName)
-#print(imgs)
+#print(datasetName)
 
 #xywh -> 1,2,3,4
 k=0
 imgs.sort()
 imgs_selected = []
 for img in imgs:
-
-    if img.split('/')[6].split('.')[0].split("_")[3]==altitude and img.split('/')[5].split('.')[0].split("_")[4]==radius:
+    if img.split('/')[-1].split('.')[0].split("_")[3]==altitude and img.split('/')[-1].split('.')[0].split("_")[4]==radius:
         imgs_selected.append(img)
 imgs_selected.sort()
 for img in imgs_selected:
-    fileName = '/home/yaesop/syn_result/detect_'+model+'_'+position+'/'+name+'/exp/labels/'+ img.split('/')[5].split('.')[0]+".txt"
-    if True:
+    #fileName = '/home/yaesop/syn_result/detect_'+model+'_'+position+'/'+name+'/exp/labels/'+ img.split('/')[7].split('.')[0]+".txt"
+    fileName = '/home/yaesop/syn_result/detect_'+model+'_'+position+'/'+name+'_'+position+'/exp/labels/'+ img.split('/')[7].split('.')[0]+".txt"
+    #print(fileName)
 
-        if os.path.exists(fileName):
+    if os.path.exists(fileName):
 
-            with open(fileName) as f:
-                for fLine in f:
-                    tmp=""
-                    if fLine.startswith("0"):
-                        tmp="person"   
-                        tmp+=" "
-                        tmp+= str(float(fLine.split(" ")[5]))
-                        tmp+=" "
-                        tmp+= str( float(fLine.split(" ")[1])*512)
-                        tmp+=" "
-                        tmp+= str( float(fLine.split(" ")[2])*512)
-                        tmp+=" "
-                        tmp+= str( float(fLine.split(" ")[3])*512)
-                        tmp+=" "
-                        tmp+= str(float(fLine.split(" ")[4])*512)
-        else:
-            tmp="person"   
-            tmp+=" "
-            tmp+= str(0)
-            tmp+=" "
-            tmp+= str(0)
-            tmp+=" "
-            tmp+= str(0)
-            tmp+=" "
-            tmp+= str(0)
-            tmp+=" "
-            tmp+= str(0)
-        file1 = open('../../Object-Detection-Metrics/detections/'+fileName.split('/')[-1],"x")
-        file1.write(tmp)
-        file1.close() #to change file access modes
+        with open(fileName) as f:
+            for fLine in f:
+                tmp=""
+                if fLine.startswith("0"):
+                    tmp="person"   
+                    tmp+=" "
+                    tmp+= str(float(fLine.split(" ")[5]))
+                    tmp+=" "
+                    tmp+= str( float(fLine.split(" ")[1])*512)
+                    tmp+=" "
+                    tmp+= str( float(fLine.split(" ")[2])*512)
+                    tmp+=" "
+                    tmp+= str( float(fLine.split(" ")[3])*512)
+                    tmp+=" "
+                    tmp+= str(float(fLine.split(" ")[4])*512)
+    else:
+        tmp="person"   
+        tmp+=" "
+        tmp+= str(0)
+        tmp+=" "
+        tmp+= str(0)
+        tmp+=" "
+        tmp+= str(0)
+        tmp+=" "
+        tmp+= str(0)
+        tmp+=" "
+        tmp+= str(0)
+    file1 = open('../../Object-Detection-Metrics/detections/'+fileName.split('/')[-1],"x")
+    file1.write(tmp)
+    file1.close() #to change file access modes
     k= k+1
