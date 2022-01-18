@@ -11,7 +11,7 @@ name = sys.argv[1]
 model = sys.argv[2]
 position = sys.argv[3]
 result = []
-text_file = open("output_"+model+"_"+position+"_"+name+".txt", "r")
+text_file = open("/home/yaesop/syn_result/output_"+model+"_"+position+"_"+name+".txt", "r")
 lines = text_file.readlines()
 k = 0
 for line in lines:
@@ -21,14 +21,14 @@ for line in lines:
     k=k+1
 result = np.array(result, dtype=np.int)
 
-fig=plt.figure(figsize=(6, 6), dpi=180)
+fig=plt.figure(figsize=(12, 11), dpi=180)
 ax1=fig.add_subplot(111, projection='3d')
 
 ylabels = np.array([5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80])
 
 #xlabels = np.flip(xlabels)
 ypos = np.arange(ylabels.shape[0])
-xlabels = np.array([5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
+xlabels = np.array([5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80])
 #xlabels = np.flip(ylabels)
 xpos = np.arange(xlabels.shape[0])
 
@@ -38,7 +38,7 @@ zpos=result
 zpos = zpos.ravel()
 
 dx=0.3
-dy=0.25
+dy=0.4
 dz=zpos
 
 ax1.w_xaxis.set_ticks(xpos + dx/5.)
@@ -62,7 +62,7 @@ colourMap = plt.cm.ScalarMappable(cmap=plt.cm.jet_r)
 colourMap.set_array(zpos)
 colourMap.set_clim(0,100)
 fig.colorbar(colourMap, shrink=0.4)
-
+plt.title(position+" position "+"yolo-"+model+" "+ name+'\n'+ "Average: "+str(sum(zpos)/256))
 plt.savefig('/home/yaesop/syn_result/'+model+'_'+position+'_'+name+'.png')
-print(model, " ", position," ", name,":", sum(zpos)/60)
+print(model, " ", position," ", name,":", sum(zpos)/256)
 #plt.show()

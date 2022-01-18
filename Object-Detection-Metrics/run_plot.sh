@@ -6,13 +6,13 @@
 cd ~/SynDataExp/Object-Detection-Metrics/
 #declare -a arr=("exp" "exp2" "exp3" "exp4" "exp5" "exp6" "exp7" "exp8")
 
-for position in stand squat prone; do 
+for position in squat prone; do 
 
-for mdl in n s m l x; do  #nano small medium large; do
-for time in 0 1 2 3; do
+for mdl in n; do  #nano small medium large; do
+for time in 1 2 3 4 ; do
 rm -rf output.txt
 for  radius in 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80; do
-for  altitude in 5 10 15 20 25 30 35 40 45 50 ; do
+for  altitude in 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80; do
 
     rm -rf groundtruths/
     mkdir groundtruths

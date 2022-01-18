@@ -5,10 +5,12 @@ import sys
 
 def plot_polar(data, max_value, step=180, name="", model="", position=""):
     print(model," ",position , " ", name,": "  ,sum(data))
-    data = data.tolist()
-    data.append(data[0])
+    ttl = name+'\n'+str(int(sum(data)))+"/"+str(180*32) +" ( "+ str(round((sum(data)/(180*32))*100,2))+"% )"
     
     plt.figure(figsize=(10, 6))
+    
+    data = data.tolist()
+    data.append(data[0])
     ax = plt.subplot(polar=True)
     
     if(max_value != 0):
@@ -18,7 +20,7 @@ def plot_polar(data, max_value, step=180, name="", model="", position=""):
     ax.set_theta_zero_location("N")
     ax.set_theta_direction(-1)
     ax.set_rgrids([5, 10, 15, 20, 25, 30])
-
+    ax.set_title(ttl)
     degree_sign = u'\N{DEGREE SIGN}'
     theta = np.linspace(2*np.pi/len(data), 2 * np.pi, len(data))
     width = (2*np.pi / len(theta))*0.9
@@ -30,7 +32,7 @@ def plot_polar(data, max_value, step=180, name="", model="", position=""):
     #plt.fill(theta, data, alpha=0.4)
     ax.bar(theta, data, width=width, bottom=0, alpha=0.4, linewidth=0)
     ax.set_ylim ((0, 32))
-    plt.title( name+'\n'+str(int(sum(data)))+"/"+str(180*32) +" ( "+ str(round((sum(data)/(180*32))*100,2))+"% )" )
+    #plt.title(title)
     #plt.show()
     plt.savefig('/home/yaesop/syn_result/'+model+'_'+position+'_polar_'+name+'.png')
 
@@ -102,7 +104,7 @@ gt.sort()
 #xywh -> 1,2,3,4
 k =0
 for i in range(len(imgs)):
-
+    #print(imgs[i])
     if True:
         flag = True
         f = open(imgs[i],"r")
@@ -125,13 +127,11 @@ for i in range(len(imgs)):
                 'y2' : float(fLine.split(" ")[3])+float(fLine.split(" ")[5])/2 \
             }
             
-            if get_iou(b_gt, f_ft)> 0.5  and flag:
-                angle = int(int(imgs[i].split('/')[3].split('.')[0].split("_")[-2])/2)
+            if get_iou(b_gt, f_ft)>0.5  and flag==True:
+                angle = int(int(imgs[i].split('/')[3].split('.')[0].split("_")[-3])/2)
                 #print(angle)
                 test[angle] = test[angle]+1
                 flag= False
-            #else:
-                #print(imgs[i])
 
 #print(test)
 #print(k)
