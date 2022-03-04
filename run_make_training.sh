@@ -1,6 +1,6 @@
-$path2drive = '/media/yaesop/' ##change this
+$path2drive = '/media/yaesop/ARL_FZNV/' ##change this
 cd $path2drive
-mkdir training/
+mkdir syn_training/
 cd syn_training
 mkdir labels
 mkdir images
