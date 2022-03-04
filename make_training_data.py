@@ -7,14 +7,14 @@ import cv2
 # images in ../syn_training/images/
 # labels in ../syn_training/labels/
 # Convert the json file to each txt annotation to have centerX centerY Width Height
-
+drive_path = sys.argv[1]
 #select the training dataset. 
-datasetNames = ['/media/yaesop/ARL_FZNV/extended20210222/desert_juliet/', \
-'/media/yaesop/ARL_FZNV/extended20210222/desert_kelly/', \
-'/media/yaesop/ARL_FZNV/extended20210222/desert_juliet_prone/', \
-'/media/yaesop/ARL_FZNV/extended20210222/desert_kelly_prone/', \
-'/media/yaesop/ARL_FZNV/extended20210222/desert_juliet_squat/', \
-'/media/yaesop/ARL_FZNV/extended20210222/desert_kelly_squat/']
+datasetNames = [drive_path+'/ARL_FZNV/extended20210222/desert_juliet/', \
+drive_path+'/ARL_FZNV/extended20210222/desert_kelly/', \
+drive_path+'/ARL_FZNV/extended20210222/desert_juliet_prone/', \
+drive_path+'/ARL_FZNV/extended20210222/desert_kelly_prone/', \
+drive_path+'/ARL_FZNV/extended20210222/desert_juliet_squat/', \
+drive_path+'/ARL_FZNV/extended20210222/desert_kelly_squat/']
 
 for datasetName in datasetNames:
     f = open(datasetName + 'synthdata.json')
