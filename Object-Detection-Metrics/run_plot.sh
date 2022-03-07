@@ -6,13 +6,13 @@
 cd ~/SynDataExp/Object-Detection-Metrics/
 #declare -a arr=("exp" "exp2" "exp3" "exp4" "exp5" "exp6" "exp7" "exp8")
 
-for position in squat prone; do 
+for position in stand squat prone; do 
 
 for mdl in n; do  #nano small medium large; do
 for time in 1 2 3 4 ; do
 rm -rf output.txt
-for  radius in 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80; do
-for  altitude in 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80; do
+for  radius in  15 20 25 30 35 40 45 50 ; do
+for  altitude in 15 20 25 30 35 40 45 50 ; do
 
     rm -rf groundtruths/
     mkdir groundtruths
@@ -33,7 +33,8 @@ done
 done
 done
     mv output.txt /home/yaesop/syn_result/output_${mdl}_${position}_${time}.txt
-    python plotting.py $time $mdl $position
+    python plot_2compare.py $time $mdl $position
+    #python plotting.py $time $mdl $position
 done
 done
 done

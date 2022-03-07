@@ -6,8 +6,8 @@
 cd ~/SynDataExp/Object-Detection-Metrics/
 rm -rf output.txt
 #declare -a arr=("exp" "exp2" "exp3" "exp4" "exp5" "exp6" "exp7" "exp8")
-for  radius in 5 10 15 20 25 30   ; do
-for  altitude in 5 10 15 20 25 30 35 40 45 50; do
+for  radius in  15 20 25 30 35 40 45 50 ; do
+for  altitude in  15 20 25 30 35 40 45 50; do
 
     rm -rf groundtruths/
     mkdir groundtruths

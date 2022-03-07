@@ -9,7 +9,8 @@ import matplotlib as mpl
 #x, y = np.random.rand(2, 100) * 4
 #hist, xedges, yedges = np.histogram2d(x, y, bins=15, range=[[5, 80], [5, 80]])
 model = sys.argv[2]
-position = "stand"
+
+position = sys.argv[3]
 
 #######nano result #####
 result_n = []
@@ -46,13 +47,13 @@ ylabels = np.array([15, 20, 25, 30, 35, 40, 45, 50])
 
 #xlabels = np.flip(xlabels)
 ypos = np.arange(ylabels.shape[0])
-xlabels = np.array([20, 25, 30, 35, 40, 45, 50])
+xlabels = np.array([15, 20, 25, 30, 35, 40, 45, 50])
 #xlabels = np.flip(ylabels)
 xpos = np.arange(xlabels.shape[0])
 
 xposM, yposM = np.meshgrid(xpos, ypos, copy=False)
 
-zpos=result[33:90]
+zpos=result
 zpos = zpos.ravel()
 
 dx=0.3

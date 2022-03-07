@@ -16,7 +16,8 @@
 #done
 #done
 #done
-
+cd /home/yaesop/
+mkdir syn_result/
 for position in squat prone; do 
 for model in n s m l x; do  #nano small medium large; do
 cd /home/yaesop/syn_result/
