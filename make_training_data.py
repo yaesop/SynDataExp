@@ -26,7 +26,7 @@ for datasetName in datasetNames:
         radius = int(i['image'].split('_')[4])
         
         randnum = random.randint(1, 4)
-        if (radius % 36 == 1) and i['image'].split('/')[0]=="Trial"+str(randnum) : 
+        if (radius % 36 == 1) and (i['image'].split('/')[0]=="trial"+str(randnum)) : 
         
             image = cv2.imread(datasetName+"/"+ i['image'].split('/')[1])
             im_path = drive_path + '/syn_training/images/'+ i['image'].split('/')[1]
