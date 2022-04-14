@@ -24,26 +24,26 @@ for datasetName in datasetNames:
         altitude = int(i['image'].split('_')[3])
         radius = int(i['image'].split('_')[4])
         
-        #if (altitude==15 or altitude==20) and (radius == 45 or radius == 50): 
-        #select low altitude and large radius
-        image = cv2.imread(datasetName+"/"+ i['image'].split('/')[1])
-        im_path = drive_path + '/syn_training/images/'+ i['image'].split('/')[1]
-        cv2.imwrite(im_path , image)
-        file1 = open(drive_path+"/syn_training/labels/"+i['image'].split('/')[1].split('.')[0]+".txt","x")
-        xmin = float(i['annotations'][0]['coordinates']['x'])
-        ymin = float(i['annotations'][0]['coordinates']['y'])
-        width = float(i['annotations'][0]['coordinates']['width'])
-        height = float(i['annotations'][0]['coordinates']['height'])
-        tmp = "person"
-        tmp+=" "
-        tmp+= str( (xmin)/512 )
-        tmp+=" "
-        tmp+= str( (ymin)/512 )
-        tmp+=" "
-        tmp+= str( width/512 )
-        tmp+=" "
-        tmp+= str( height/512 )
-        file1.write(tmp)
-        tmp = ""
-        file1.close() 
+        if (radius % 36 == 1): 
+        
+            image = cv2.imread(datasetName+"/"+ i['image'].split('/')[1])
+            im_path = drive_path + '/syn_training/images/'+ i['image'].split('/')[1]
+            cv2.imwrite(im_path , image)
+            file1 = open(drive_path+"/syn_training/labels/"+i['image'].split('/')[1].split('.')[0]+".txt","x")
+            xmin = float(i['annotations'][0]['coordinates']['x'])
+            ymin = float(i['annotations'][0]['coordinates']['y'])
+            width = float(i['annotations'][0]['coordinates']['width'])
+            height = float(i['annotations'][0]['coordinates']['height'])
+            tmp = "person"
+            tmp+=" "
+            tmp+= str( (xmin)/512 )
+            tmp+=" "
+            tmp+= str( (ymin)/512 )
+            tmp+=" "
+            tmp+= str( width/512 )
+            tmp+=" "
+            tmp+= str( height/512 )
+            file1.write(tmp)
+            tmp = ""
+            file1.close() 
        
