@@ -2,6 +2,7 @@ import json
 import sys
 import glob, os
 import cv2
+import random
 
 #store the data for training in ../syn_training/
 # images in ../syn_training/images/
@@ -24,7 +25,8 @@ for datasetName in datasetNames:
         altitude = int(i['image'].split('_')[3])
         radius = int(i['image'].split('_')[4])
         
-        if (radius % 36 == 1): 
+        randnum = random.randint(1, 4)
+        if (radius % 36 == 1) and i['image'].split('/')[0]=="Trial"+str(randnum) : 
         
             image = cv2.imread(datasetName+"/"+ i['image'].split('/')[1])
             im_path = drive_path + '/syn_training/images/'+ i['image'].split('/')[1]
